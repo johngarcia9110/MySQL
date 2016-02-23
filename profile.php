@@ -1,6 +1,7 @@
 <?php 
 
-include('connection.php'); 
+session_start();
+
 
 
 ?>
@@ -11,7 +12,7 @@ include('connection.php');
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Password Hashing</title>
+        <title>Log In</title>
         
         
         <!-- BOOTSTRAP -->
@@ -27,14 +28,11 @@ include('connection.php');
     </head>
     <body>
         <div class="container">
-            <h1>Password Hashing</h1>
-            <?php 
-                $password = password_hash( "thepassword", PASSWORD_DEFAULT );
-                echo $password;
+            <h1>Profile Page</h1>
+            <p class="lead">Welcome <?php echo $_SESSION['loggedInUser']; ?>!</p>
+            <p>Your email address is: <?php echo $_SESSION['loggedInEmail']; ?></p>
+            <p><a href="logout.php" class="btn btn-danger btn-sm">log out</a></p>
             
-
-            ?>
-
 
         </div>
     <!--jQuery -->

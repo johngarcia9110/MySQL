@@ -1,6 +1,9 @@
 <?php 
 
-include('connection.php'); 
+    session_start();
+    $_SESSION['username'] = "johngarcia";
+    $_SESSION['email'] = "john@gmail.com";
+    echo "Session is active!";
 
 
 ?>
@@ -11,7 +14,7 @@ include('connection.php');
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Password Hashing</title>
+        <title>PHP SESSION</title>
         
         
         <!-- BOOTSTRAP -->
@@ -27,14 +30,8 @@ include('connection.php');
     </head>
     <body>
         <div class="container">
-            <h1>Password Hashing</h1>
-            <?php 
-                $password = password_hash( "thepassword", PASSWORD_DEFAULT );
-                echo $password;
-            
-
-            ?>
-
+            <h1>PHP SESSION</h1>
+ 
 
         </div>
     <!--jQuery -->

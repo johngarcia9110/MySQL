@@ -1,8 +1,10 @@
 <?php 
 
-include('connection.php'); 
-
-
+    session_start();
+    echo "Your username is ".$_SESSION['username']."<br>";
+    echo "Your email is ".$_SESSION['email']."<br>";
+    //print_r($_SESSION);
+    $_SESSION['username'] = "johnsnow"; 
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@ include('connection.php');
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Password Hashing</title>
+        <title>PHP SESSION 2</title>
         
         
         <!-- BOOTSTRAP -->
@@ -27,14 +29,8 @@ include('connection.php');
     </head>
     <body>
         <div class="container">
-            <h1>Password Hashing</h1>
-            <?php 
-                $password = password_hash( "thepassword", PASSWORD_DEFAULT );
-                echo $password;
-            
-
-            ?>
-
+            <h1>PHP SESSION 2</h1>
+                <a href="logout.php">Log out of your session</a>
 
         </div>
     <!--jQuery -->
